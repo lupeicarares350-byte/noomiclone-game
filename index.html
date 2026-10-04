@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a10" />
+    <title>NoomiClone</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">PHYSICS FLIP SIM</p>
+          <h1>NoomiClone</h1>
+        </div>
+        <button id="settingsBtn" class="ghost-button">Settings</button>
+      </header>
+
+      <main class="game-card">
+        <div class="hud">
+          <div class="stat-box">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>Flips</span>
+            <strong id="flipValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>Regrabs</span>
+            <strong id="regrabValue">0</strong>
+          </div>
+        </div>
+
+        <div id="gameWrap" class="game-wrap">
+          <canvas id="gameCanvas" width="420" height="620" aria-label="NoomiClone game area"></canvas>
+          <div id="overlay" class="overlay">
+            <h2>Ready to flip?</h2>
+            <p>Tap or press space to launch off the bar.</p>
+            <button id="startBtn" class="primary-button">Start</button>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <button id="flipBtn" class="primary-button">Flip</button>
+          <button id="regrabBtn" class="secondary-button">Use Regrab</button>
+        </div>
+      </main>
+    </div>
+
+    <aside id="settingsPanel" class="settings-panel hidden" aria-label="Game settings">
+      <div class="settings-header">
+        <h3>Settings</h3>
+        <button id="closeSettingsBtn" class="icon-button" aria-label="Close settings">×</button>
+      </div>
+
+      <div class="field-group">
+        <label for="regrabLimitInput">Regrab limit</label>
+        <input id="regrabLimitInput" type="number" min="0" max="100000000000" step="1" value="25" />
+      </div>
+
+      <div class="field-group">
+        <label for="skinSelect">Current skin</label>
+        <select id="skinSelect"></select>
+      </div>
+
+      <div class="toggle-row">
+        <label for="unlockSkinsToggle">Unlock all skins</label>
+        <input id="unlockSkinsToggle" type="checkbox" />
+      </div>
+
+      <div class="toggle-row">
+        <label for="soundToggle">Sound</label>
+        <input id="soundToggle" type="checkbox" checked />
+      </div>
+
+      <button id="resetSettingsBtn" class="secondary-button full-width">Reset</button>
+    </aside>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
